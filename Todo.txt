@@ -1,0 +1,13 @@
+To do:
+    => Api []
+        tests []
+
+    => Front-end []
+        Página download []
+
+    => Discord []
+        Configuração []
+        Comportamento []
+            -Rodar música []
+            -?
+::
