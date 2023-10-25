@@ -6,8 +6,10 @@ import Icon from "./icon";
 export default function DownloadInput() {
     const [url, setUrl] = useState("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
     async function handleClick(){
+        setLoading(true);
         setError("");
 
         try{
@@ -26,15 +28,22 @@ export default function DownloadInput() {
                 a.href = url;
                 a.download = "audio.mp3";
                 a.click();
+                setLoading(false);
             });
         }
         catch(err: any){
             setError(err.message);
+            setLoading(false);
         }
     }
     
     return (
         <div className="w-[80%] sm:w-[500px]">
+            {loading &&
+                <div className="w-full flex items-center justify-center p-2">
+                    <Icon src="./loading-black.svg" size={30} alt="loading icon" />
+                </div>
+            }
             {error &&
                 <p className="text-red-500 text-sm">
                     {error}
