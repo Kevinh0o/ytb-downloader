@@ -3,6 +3,7 @@ import Icon from "@/client/Components/icon";
 import Input from "@/client/Components/input";
 import Logo from "@/client/Components/logo";
 import SubText from "@/client/Components/sub-text";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,8 +13,12 @@ export default function Home() {
         <SubText />
         <DownloadInput />
         <div className="flex gap-4">
-          <Icon src="/vercel.svg" size={50} alt="github icon"/>
-          <Icon src="/vercel.svg" size={50} alt="github icon"/>
+          <Link href="/github">
+            <Icon src="/github.svg" size={40} alt="github icon"/>
+          </Link>
+          <Link href="/discord">
+            <Icon src="/discord.png" size={40} alt="discord icon"/>
+          </Link>
         </div>
       </div>
     </main>
