@@ -6,7 +6,7 @@ import SubText from "@/client/Components/sub-text";
 
 export default function Home() {
   return (
-    <main className="bg-gray-100 w-screen h-screen">
+    <main className="bg-gray-100 w-full h-screen">
       <div className="h-full w-full flex flex-col justify-center items-center gap-4 text-center">
         <Logo />
         <SubText />

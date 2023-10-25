@@ -33,21 +33,23 @@ export default function DownloadInput() {
     }
     
     return (
-        <div>
+        <div className="w-[80%] sm:w-[500px]">
             {error &&
                 <p className="text-red-500 text-sm">
                     {error}
                 </p>
             }
-            <div className="w-[80%] sm:w-[500px] flex bg-white
+            <div className="flex bg-white
             border border-1 border-gray-300 rounded-md p-2 text-sm">
                 <Input
                     type="url"
-                    placeholder="https://www.youtube.com/watch?v= YOUR VIDEO URL HERE"
+                    placeholder="www.youtube.com/watch?v= YOUR VIDEO URL HERE"
                     setValue={setUrl}
                 />
-                <button onClick={handleClick}
+                <button 
+                    onClick={handleClick}
                     disabled={url.length < 3}
+                    className="bg-white"
                 >
                     Download
                 </button>
