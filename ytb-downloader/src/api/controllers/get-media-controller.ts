@@ -1,11 +1,10 @@
-import { Request, Response } from 'express';
 import MediaAdapter from '../adapters/media-adapter';
 import MediaGetter from '../services/media-getter';
 import GetAudioUseCase from '../use-cases/get-audio';
 
 export default class GetMediaController {
 
-    static get(req: Request, res: Response) {
+    static get(req: any, res: any) {
         const mediaGetter = new MediaGetter();
         const mediaAdapter = new MediaAdapter(mediaGetter);
         const audioUseCase = new GetAudioUseCase(mediaAdapter);
@@ -14,7 +13,7 @@ export default class GetMediaController {
 
         try{
             const stream = audioUseCase.execute(url);
-            stream.get().pipe(res.status(200).type('mp3'));
+            stream.get().pipe(res.status(200));
         }
         catch(err: any){
             res.status(err.code).send({message: err.message});
