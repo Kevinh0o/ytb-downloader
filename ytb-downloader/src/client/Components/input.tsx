@@ -1,11 +1,21 @@
-export default function Input() {
+'use client';
+
+import { useEffect, useState } from "react";
+
+type Props = {
+    placeholder: string;
+    type: "url" | "text"
+    setValue: (value: string) => void;
+}
+
+export default function Input({ placeholder, type, setValue }: Props) {
+
     return (
-        <div className="w-[80%] sm:w-[500px]">
-            <input
-                type="url"
-                placeholder="https://www.youtube.com/watch?v= YOUR VIDEO URL HERE"
-                className="border border-1 border-gray-300 rounded-md p-2 text-sm w-full"
-            />
-        </div>
+        <input
+            type={type}
+            placeholder={placeholder}
+            className="w-full outline-none bg-transparent"
+            onChange={e => setValue(e.target.value) }
+        />
     )
 }

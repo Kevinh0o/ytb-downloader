@@ -8,7 +8,7 @@ export default class GetAudioUseCase {
     ){}
 
     public execute(url: string){
-        if(!url){
+        if(!url || url === ''){
             throw GetAudioExeption.UrlNotProvided();
         }
 

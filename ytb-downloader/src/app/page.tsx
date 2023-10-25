@@ -1,3 +1,4 @@
+import DownloadInput from "@/client/Components/download-input";
 import Icon from "@/client/Components/icon";
 import Input from "@/client/Components/input";
 import Logo from "@/client/Components/logo";
@@ -9,7 +10,7 @@ export default function Home() {
       <div className="h-full w-full flex flex-col justify-center items-center gap-4 text-center">
         <Logo />
         <SubText />
-        <Input />
+        <DownloadInput />
         <div className="flex gap-4">
           <Icon src="/vercel.svg" size={50} alt="github icon"/>
           <Icon src="/vercel.svg" size={50} alt="github icon"/>
