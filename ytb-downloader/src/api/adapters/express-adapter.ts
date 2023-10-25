@@ -5,7 +5,6 @@ export default class ExpressAdapter implements IHttpAdapter {
     constructor(
         public response: Response,
         public request: Request
-
     ) {}
 
     public executeController(fn: Function): void{
