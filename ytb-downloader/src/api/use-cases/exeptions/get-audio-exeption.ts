@@ -13,4 +13,13 @@ export default class GetAudioExeption extends Error {
             400 //bad request
         );
     }
+
+    static VideoNotFound(){
+
+        return new GetAudioExeption(
+            'Vídeo não encontrado.',
+            404 //Not found
+        );
+    }
+
 }

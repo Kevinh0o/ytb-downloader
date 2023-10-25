@@ -6,8 +6,11 @@ export default class MediaAdapter implements IMediaRepository {
         private mediaGetter: MediaGetter
     ) {}
 
-    public get(url: string){
-        
-        return this.mediaGetter.get(url);
+    public get(url: string, quality: string){
+        return this.mediaGetter.get(url, quality);
+    }
+
+    public getVideoInfo(url: string) {
+        return this.mediaGetter.getVideoInfo(url);
     }
 }

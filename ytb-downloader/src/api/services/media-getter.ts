@@ -4,20 +4,35 @@ import MediaGetterExeption from "./exeptions/media-getter-exeption";
 
 export default class MediaGetter implements IMediaRepository {
 
-    public get(url: string){
-        const options: downloadOptions = {
-            filter: 'audioonly',
-            quality: 'highestaudio',
+    public get(url: string, quality: string){
+        let mediaQuality = 'highestaudio';
+
+        if(quality === 'low'){
+            mediaQuality = 'lowestaudio';
         }
 
-        //tries to valdiae the url.
-        try{
-            ytdl.getURLVideoID(url)
-        }
-        catch{
-            throw MediaGetterExeption.VideoNotFound();
-        }
+        const options: downloadOptions = {
+            filter: 'audioonly',
+            quality: mediaQuality,
+        };
         
         return ytdl(url, options);
+    }
+    
+    public async getVideoInfo(url: string) {
+        const isUrlValid = ytdl.validateURL(url);
+
+        if(!isUrlValid){
+            throw MediaGetterExeption.VideoNotFound();
+        }
+
+        const basicInfo = await ytdl.getInfo(url);
+
+        const lenghtInMinutes = parseInt(basicInfo.videoDetails.lengthSeconds) / 60;
+
+        return{
+            title: basicInfo.videoDetails.title,
+            lenght: lenghtInMinutes
+        }
     }
 }

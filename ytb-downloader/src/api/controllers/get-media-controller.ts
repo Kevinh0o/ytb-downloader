@@ -4,7 +4,7 @@ import GetAudioUseCase from '../use-cases/get-audio';
 
 export default class GetMediaController {
 
-    static get(req: any, res: any) {
+    static async get(req: any, res: any) {
         const mediaGetter = new MediaGetter();
         const mediaAdapter = new MediaAdapter(mediaGetter);
         const audioUseCase = new GetAudioUseCase(mediaAdapter);
@@ -12,7 +12,7 @@ export default class GetMediaController {
         const url = req.query.url as string;
 
         try{
-            const stream = audioUseCase.execute(url);
+            const stream = await audioUseCase.execute(url);
             stream.get().pipe(res.status(200));
         }
         catch(err: any){
