@@ -7,7 +7,6 @@ export default class GetAudioExeption extends Error {
     }
     
     static UrlNotProvided(){
-
         return new GetAudioExeption(
             'URL não informada.',
             400 //bad request
@@ -15,7 +14,6 @@ export default class GetAudioExeption extends Error {
     }
 
     static VideoNotFound(){
-
         return new GetAudioExeption(
             'Vídeo não encontrado.',
             404 //Not found
