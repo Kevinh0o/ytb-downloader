@@ -1,7 +1,7 @@
 import MediaAdapter from "../adapters/media-adapter";
 import Audio from "../entities/audio";
 import IMediaRepository from "../repository/media-repository";
-import GetAudioExeption from "./exeptions/get-audio-exeption";
+import GetAudioException from "./exeptions/get-audio-exeption";
 
 export default class GetAudioUseCase {
     constructor(
@@ -10,13 +10,13 @@ export default class GetAudioUseCase {
 
     public async execute(url: string){
         if(!url || url === ''){
-            throw GetAudioExeption.UrlNotProvided();
+            throw GetAudioException.UrlNotProvided();
         }
 
         const basicInfo = await this.mediaAdapter.getVideoInfo(url);
 
         if(!basicInfo){
-            throw GetAudioExeption.VideoNotFound();
+            throw GetAudioException.VideoNotFound();
         }
 
         if(basicInfo.lenght > 5){
