@@ -3,26 +3,26 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-### 🏠 [Homepage](ytb-download.vercel.app)
+### 🏠 [Homepage](https://ytb-download.vercel.app/)
 
 ## Install
 
 ```sh
-#require node & npm
+# require node & npm
 npm install
 ```
 
 ## Usage
 
 ```sh
-#it will run on localhost:3000/
+# it will run both server and client on localhost:3000/
 npm run dev
 ```
 
 ## Run tests
 
 ```sh
-#tests written with vitest
+# tests written with vitest
 npm test
 ```
 
