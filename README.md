@@ -5,10 +5,28 @@
 
 ### 🏠 [Homepage](https://ytb-download.vercel.app/)
 
+# YouTube Audio Downloader
+
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
+**YTB-Downloader** is a versatile web application that allows you to seamlessly download audio from YouTube videos.
+
+## Features
+
+- **Client-Side**: The user-friendly client-side component provides an intuitive interface for users to enter YouTube video URLs and initiate the download process.
+
+- **Server-Side**: The server-side component handles the heavy lifting by extracting audio from YouTube videos and delivering the converted files to users, making it efficient and scalable.
+
+- **High-Quality Audio**: Enjoy your favorite YouTube content as MP3 or other popular audio formats, ensuring the highest audio quality.
+
+## Getting Started
+To get started, follow the installation and usage instructions below.
+
+
 ## Install
 
 ```sh
-# require node & npm
+# requires node & npm
 npm install
 ```
 
