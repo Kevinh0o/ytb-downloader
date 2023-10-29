@@ -32,7 +32,7 @@ export default class MediaGetter implements IMediaRepository {
 
         return{
             title: basicInfo.videoDetails.title,
-            lenght: lenghtInMinutes
+            length: lenghtInMinutes
         }
     }
 }

@@ -19,7 +19,7 @@ export default class GetAudioUseCase {
             throw GetAudioException.VideoNotFound();
         }
 
-        if(basicInfo.lenght > 5){
+        if(basicInfo.length >= 5){
             return new Audio(this.mediaAdapter.get(url, 'low'));
         }
 
